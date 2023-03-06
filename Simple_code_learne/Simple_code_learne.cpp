@@ -29,9 +29,26 @@ void main() {
     FillArray(firstArray, size);
     FillArray(secondArray, size);
 
-    cout << "First Array = ";
+    cout << "First Array = \t";
     ShowArray(firstArray, size);
-    cout << "Second Array = ";
+    cout << "Second Array = \t";
+    ShowArray(secondArray, size);
+
+    delete[] firstArray;
+
+    firstArray = new int[size];
+
+    for (int i = 0; i < size; i++) {
+        firstArray[i] = secondArray[i];
+    }
+    //Создаем новый массив и выполняем перенос каждого элемента
+    //второго массива в первый массив
+
+    cout << "=============================" << endl;
+
+    cout << "First Array = \t";
+    ShowArray(firstArray, size);
+    cout << "Second Array = \t";
     ShowArray(secondArray, size);
 
     delete[] secondArray;
